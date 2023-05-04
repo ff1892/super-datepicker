@@ -1,0 +1,30 @@
+.commonlyTitle {
+  @include title-small;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.commonlyList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  column-count: 2;
+}
+.commonlyItem {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 5px;
+}
+.commonlyButton {
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  font-size: $medium-text-size;
+  color: $picker-accent-color;
+  outline: none;
+
+  &:hover, &:focus {
+    box-shadow: 0 2px 0 0 $picker-accent-color;
+  }
+}

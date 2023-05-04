@@ -1,0 +1,41 @@
+.button {
+  @include outline-standard;
+  border: 1px solid $picker-accent-color;
+  padding: 5px 10px;
+  font-size: $medium-text-size;
+  background: none;
+  color: $picker-accent-color;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 100%;
+
+  &:hover, &:focus {
+    background: $picker-accent-color-10;
+    text-decoration: underline;
+  }
+
+  svg {
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+
+    path {
+      stroke: $picker-accent-color;
+      fill: $picker-accent-color;
+    }
+  }
+}
+
+.buttonFilled {
+  background-color: $picker-accent-color;
+  color: $picker-white;
+
+  &:hover, &:focus {
+    background-color: $picker-accent-color-dark;
+  }
+
+  svg path {
+    stroke: $picker-white;
+    fill: $picker-white;
+  }
+}

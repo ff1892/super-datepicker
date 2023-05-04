@@ -1,0 +1,18 @@
+.tabModal {
+  width: 400px;
+  border: 1px solid $picker-border-color;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px 0 $picker-border-color;
+  background-color: $picker-white;
+  margin-top: 30px;
+  overflow: hidden;
+}
+
+.tabWrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.tabPanel {
+  padding: 15px;
+}

@@ -1,1 +1,15 @@
-$text-color: #ff1892;
+$picker-white: #ffffff;
+$picker-background-color: #fbfcfd;
+$picker-border-color: #e3e5ee;
+$picker-accent-color: #0d7edb;
+$picker-accent-color-10: rgba(#0d7edb, 0.1);
+$picker-accent-color-20: rgba(#0d7edb, 0.2);
+$picker-accent-color-dark: darken($picker-accent-color, 3%);
+$picker-text-light-color: #fefefe;
+$picker-text-dark-color: #353535;
+$picker-text-dark-color-10: rgba(#353535, 0.1);
+
+$regular-text-size: 14px;
+$medium-text-size: 16px;
+
+$outline-standard: 2px solid $picker-accent-color;

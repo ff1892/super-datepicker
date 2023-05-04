@@ -1,0 +1,55 @@
+@mixin title-small {
+  font-size: $medium-text-size;
+  color: $picker-text-dark-color;
+  font-weight: bold;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin bottom-line {
+  box-shadow: inset 0 -2px 0 0 $picker-accent-color;
+}
+
+@mixin input {
+  background-color: $picker-background-color;
+  border: 1px solid $picker-border-color;
+  border-radius: 2px;
+  font-size: $regular-text-size;
+  outline: none;
+  // height: 100%;
+
+  &:focus {
+    @include bottom-line;
+  }
+}
+
+@mixin input-select {
+  @include input;
+  padding: 5px 20px 5px 10px;
+  appearance: none;
+  width: 100%;
+}
+
+@mixin outline-standard {
+
+  &:focus {
+    outline: $outline-standard;
+  }
+}
+
+@mixin hide {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}

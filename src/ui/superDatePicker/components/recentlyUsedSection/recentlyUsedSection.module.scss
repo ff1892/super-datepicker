@@ -1,0 +1,29 @@
+.recentlyTitle {
+  @include title-small;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.recentlyList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.recentlyItem {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 5px;
+}
+.recentlyButton {
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  font-size: $medium-text-size;
+  color: $picker-accent-color;
+  outline: none;
+
+  &:hover, &:focus {
+    box-shadow: 0 2px 0 0 $picker-accent-color;
+  }
+}

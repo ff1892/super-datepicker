@@ -1,0 +1,22 @@
+.quickForm {
+  max-width: 400px;
+  padding: 15px 10px;
+  border: 1px solid $picker-border-color;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px 0 $picker-border-color;
+  background-color: $picker-white;
+}
+
+.quickWrapper {
+  padding-bottom: 12px;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid $picker-border-color;
+  }
+
+  &:not(:first-child) {
+    padding-top: 12px;
+  }
+}
+
+

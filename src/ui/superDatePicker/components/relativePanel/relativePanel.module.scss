@@ -1,0 +1,63 @@
+.inputWrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 20px;
+  margin-bottom: 15px;
+}
+
+.round {
+  cursor: pointer;
+  padding-left: 30px;
+  position: relative;
+  margin-bottom: 15px;
+  display: block;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 19px;
+    height: 19px;
+    border: 2px solid $picker-accent-color;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 11px;
+    height: 11px;
+    background-color: $picker-accent-color;
+    left: 4px;
+    top: 4px;
+    border-radius: 50%;
+    display: none;
+  }
+}
+
+.round:has(> input:checked)::after {
+  display: block;
+}
+
+.checkbox {
+  @include hide;
+}
+
+.output {
+  display: flex;
+}
+
+.outputLabel {
+  padding: 10px 15px;
+  background-color: $picker-text-dark-color-10;
+  font-size: $regular-text-size;
+}
+
+.outputInput {
+  @include input;
+  flex-grow: 1;
+  cursor: default;
+  padding-left: 15px;
+  color: $picker-text-dark-color;
+}
