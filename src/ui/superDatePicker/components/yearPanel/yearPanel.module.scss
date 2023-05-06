@@ -1,0 +1,35 @@
+.yearGrid {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-gap: 12px;
+}
+
+.yearButton {
+  border: none;
+  padding: 8px 0;
+  background-color: transparent;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $picker-accent-color-10;
+  }
+
+  &:focus {
+    @include outline-standard;
+    font-weight: bold;
+  }
+}
+
+.yearSelected {
+  background-color: $picker-accent-color;
+  color: $picker-white;
+
+  &:hover {
+    background-color: $picker-accent-color;
+  }
+}

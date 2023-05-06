@@ -1,0 +1,11 @@
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: auto 1fr auto;
+  column-gap: 10px;
+}
+
+.time {
+  grid-column: 2/-1;
+  grid-row: 1/-1;
+}

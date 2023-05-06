@@ -1,0 +1,59 @@
+.daysWrapper {
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+.daysGrid {
+  display: grid;
+  height: 100%;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  justify-items: center;
+  align-items: center;
+  font-size: $regular-text-size;
+  column-gap: 5px;
+  row-gap: 5px;
+}
+
+.weekDay {
+  color: $picker-text-grey-color;
+}
+
+.dayButton {
+  display: flex;
+  width: 25px;
+  height: 25px;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  color: $picker-text-grey-color;
+  font-weight: 400;
+  border-radius: 4px;
+  outline: none;
+
+  &:hover {
+    text-decoration: underline;
+    transform: scale(1.2);
+  }
+
+  &:focus {
+    background-color: $picker-accent-color-10;
+    transform: scale(1.2);
+  }
+}
+
+.dayButtonThisMonth {
+  font-weight: 700;
+  color: $picker-text-dark-color;
+}
+
+.daySelected {
+  color: $picker-white;
+  background-color: $picker-accent-color;
+
+  &:focus {
+    background-color: $picker-accent-color;
+  }
+}

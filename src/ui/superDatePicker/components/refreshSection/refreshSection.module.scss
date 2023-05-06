@@ -1,0 +1,11 @@
+.refreshTitle {
+  @include title-small;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.refreshForm {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) auto;
+  column-gap: 10px;
+}

@@ -1,14 +1,39 @@
+import { useState } from 'react';
 import styles from './superDatePicker.module.scss';
-import picture from '../../../static/img/dummy.jpeg';
-import Icon from '../../../static/icons/sun.svg';
+import { QuickSelectButton } from './components/quickSelectButton';
+import { PrettyFormatButton } from './components/prettyFormatButton';
+import { RefreshButton } from './components/refreshButton';
+import { QuickSelectModal } from './components/quickSelectModal';
+import { PopoverSection } from './components/popoverSection';
 
 function SuperDatePicker() {
+  const isQuickSelectOpen = false;
+
+  const [isPopoverShown, togglePopoverShown] = useState(true);
+
+  const handlePrettyClick = () => {
+    togglePopoverShown((prev) => !prev);
+  };
+
   return (
     <>
-      <img src={picture} width={300} height={200} alt="Some pic" />
-      <h1 className={styles.title}>UI Component</h1>
-      <h2>Super Date Picker</h2>
-      <Icon className={styles.icon} />
+      <h1 className={styles.title}>Super Date Picker</h1>
+      <div className={styles.pickerWrapper}>
+        <div className={styles.quickButton}>
+          <QuickSelectButton />
+          { isQuickSelectOpen && (
+          <div className={styles.quickModal}>
+            <QuickSelectModal />
+          </div>
+          )}
+        </div>
+        <div className={styles.prettyFormatWrapper}>
+          { isPopoverShown
+            ? <PopoverSection />
+            : <PrettyFormatButton onClick={handlePrettyClick} /> }
+        </div>
+        <RefreshButton />
+      </div>
     </>
   );
 }

@@ -1,0 +1,56 @@
+.quickSelectTitleWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.quickSelectTitle {
+  @include title-small;
+}
+
+.quickSelectButtonWrapper {
+  display: flex;
+}
+
+.quickSelectButton {
+  @include flex-center;
+  @include outline-standard;
+  width: 30px;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+  background-color: $picker-accent-color-10;
+
+
+  &:not(:first-child) {
+    margin-left: 8px;
+  }
+
+  &:hover {
+    background-color: $picker-accent-color-20;
+  }
+}
+
+.rotatedIcon {
+  transform: rotate(180deg);
+}
+
+.quickSelectIcon {
+  width: 12px;
+  height: 12px;
+
+  path {
+    fill: $picker-accent-color;
+  }
+}
+
+.quickSelectForm {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) auto;
+  column-gap: 10px;
+
+  & > *:not(:last-child) {
+    width: 100%;
+  }
+}

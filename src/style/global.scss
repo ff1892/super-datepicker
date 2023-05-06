@@ -1,4 +1,12 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 body {
+  background: #eee;
   margin: 0;
-  background-color: antiquewhite;
+  display: flex;
+  justify-content: center;
+  padding-top: 200px;
+  font-family: 'Roboto Flex', sans-serif;
 }

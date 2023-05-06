@@ -1,0 +1,36 @@
+.popoverWrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: $picker-white;
+  position: relative;
+}
+
+.tabModalWrapper {
+  z-index: 5;
+  position: absolute;
+  top: 50px;
+}
+
+.alignLeft {
+  left: -60px;
+}
+
+.alignRight {
+  right: -60px;
+}
+
+.popoverButton {
+  flex-grow: 1;
+}
+
+.popoverIcon {
+  padding: 0 5px;
+  display: flex;
+  align-items: center;
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
