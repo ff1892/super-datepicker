@@ -1,7 +1,8 @@
 import styles from './relativePanel.module.scss';
 import { CustomInputNum } from '../../../shared/customInputNum';
 import { CustomSelect } from '../../../shared/customSelect';
-import { TimeUnit } from '../../constants';
+import { TimeUnit } from '../../constants/common';
+import { TimeOutput } from '../timeOutput';
 
 const selectOptionsAgo = Object.values(TimeUnit).map((unit) => (
   { value: `${unit}-ago`, text: `${unit} ago` }
@@ -31,15 +32,7 @@ function RelativePanel() {
           Round to the minute
         </label>
       </div>
-      <div className={styles.output}>
-        <label className={styles.outputLabel}>Start date</label>
-        <input
-          className={styles.outputInput}
-          type='text'
-          value='Default Value'
-          readOnly
-        />
-      </div>
+      <TimeOutput />
     </>
   );
 }

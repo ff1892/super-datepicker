@@ -35,6 +35,8 @@
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".tsx"] }],
     "jsx-quotes": ["error", "prefer-single"],
     "react/jsx-props-no-spreading": "off",
-    "jsx-a11y/label-has-associated-control": "off"
+    "jsx-a11y/label-has-associated-control": "off",
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }]
+
   }
 }

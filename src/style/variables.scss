@@ -8,8 +8,13 @@ $picker-accent-color-dark: darken($picker-accent-color, 3%);
 $picker-text-light-color: #fefefe;
 $picker-text-dark-color: #353535;
 $picker-text-dark-color-10: rgba(#353535, 0.1);
+$picker-text-grey-color: #575757;
 
+$smallest-text-size: 10px;
+$small-text-size: 12px;
 $regular-text-size: 14px;
 $medium-text-size: 16px;
+$big-text-size: 20px;
+$large-text-size: 24px;
 
 $outline-standard: 2px solid $picker-accent-color;

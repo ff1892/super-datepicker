@@ -1,5 +1,5 @@
 import styles from './commonlyUsedSection.module.scss';
-import { CommonlyUsedTime } from '../../constants';
+import { CommonlyUsedTime } from '../../constants/common';
 
 function CommonlyUsedSection() {
   return (

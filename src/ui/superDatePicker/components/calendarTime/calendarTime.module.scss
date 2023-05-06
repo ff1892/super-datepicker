@@ -1,0 +1,46 @@
+.timeWrapper {
+  padding: 10px 0;
+  outline: none;
+
+  &:focus {
+    background-color: $picker-accent-color-10;
+  }
+}
+
+.timeList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 240px;
+  overflow: auto;
+}
+
+.timeItem {
+  font-size: $small-text-size;
+  color: $picker-text-grey-color;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: none;
+  background-color: transparent;
+  outline: none;
+
+  &:not(:last-child) {
+    margin-bottom: 2px;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:focus {
+    background-color: $picker-accent-color-20;
+  }
+
+  &:active {
+    text-decoration: underline;
+  }
+}

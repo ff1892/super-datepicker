@@ -1,0 +1,72 @@
+.calendarHeader {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr auto;
+  column-gap: 10px;
+  align-items: center;
+}
+
+.calendarMonth {
+  justify-self: end;
+  font-size: $medium-text-size;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  font-weight: 500;
+
+  &:focus {
+    text-decoration: underline;
+  }
+
+  &:hover {
+    color: $picker-accent-color;
+  }
+
+}
+
+.calendarYear {
+  justify-self: start;
+  font-size: $big-text-size;
+  color: $picker-text-grey-color;
+  letter-spacing: 1px;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  font-weight: 200;
+
+  &:hover {
+    color: $picker-accent-color;
+  }
+
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+.calendarHeaderButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+  border-radius: 5px;
+  border: none;
+  background-color: transparent;
+  @include outline-standard;
+
+  &:hover, &:focus {
+    transform: scale(1.1);
+    background-color: $picker-accent-color-10;
+  }
+
+  svg {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.calendarHeaderButtonPrev {
+
+  svg {
+    transform: rotate(180deg);
+  }
+
+}

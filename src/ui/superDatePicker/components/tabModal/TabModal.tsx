@@ -12,7 +12,7 @@ const TabButtons = {
 };
 
 export function TabModal() {
-  const [currentTab, setCurrentTab] = useState(TabButtons.Relative);
+  const [currentTab, setCurrentTab] = useState(TabButtons.Absolute);
 
   const handleTabClick = (e: MouseEvent) => {
     if (e.currentTarget.textContent && e.currentTarget.textContent !== currentTab) {

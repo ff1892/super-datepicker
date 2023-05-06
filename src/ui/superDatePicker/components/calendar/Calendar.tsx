@@ -1,24 +1,30 @@
+import { CalendarDays } from '../calendarDays';
+import { CalendarHeader } from '../calendarHeader';
+import { CalendarTime } from '../calendarTime';
 import styles from './calendar.module.scss';
 
-function Calendar() {
+interface ICalendar {
+  date?: Date,
+}
+
+function Calendar({ date = new Date() }: ICalendar) {
   return (
     <div className={styles.calendar}>
       <div className={styles.monthYear}>
-        <button
-          type='button'
-          aria-label='Switch to previous month'
-        >
-          p
-        </button>
+        <CalendarHeader date={date} />
       </div>
       <div className={styles.dates}>
-        <span>dates</span>
+        <CalendarDays date={date} />
       </div>
       <div className={styles.time}>
-        <span>time</span>
+        <CalendarTime />
       </div>
     </div>
   );
 }
+
+Calendar.defaultProps = {
+  date: new Date(),
+};
 
 export { Calendar };

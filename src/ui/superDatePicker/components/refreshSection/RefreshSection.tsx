@@ -1,6 +1,6 @@
 import { CustomSelect } from '../../../shared/customSelect';
 import { CustomInputNum } from '../../../shared/customInputNum';
-import { TimeUnit } from '../../constants';
+import { TimeUnit } from '../../constants/common';
 import styles from './refreshSection.module.scss';
 import { CustomButton } from '../../../shared/customButton';
 import StartIcon from '../../../../../static/icons/start.svg';

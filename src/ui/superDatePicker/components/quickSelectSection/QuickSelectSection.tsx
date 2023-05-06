@@ -1,4 +1,4 @@
-import { TimeUnit } from '../../constants';
+import { TimeUnit } from '../../constants/common';
 import styles from './quickSelectSection.module.scss';
 import IconChevron from '../../../../../static/icons/chevron.svg';
 import { CustomSelect } from '../../../shared/customSelect/CustomSelect';

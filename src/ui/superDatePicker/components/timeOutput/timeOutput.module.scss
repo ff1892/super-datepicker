@@ -1,0 +1,21 @@
+.output {
+  display: flex;
+}
+
+.outputLabel {
+  padding: 10px 15px;
+  background-color: $picker-text-dark-color-10;
+  font-size: $regular-text-size;
+}
+
+.outputInput {
+  @include input;
+  flex-grow: 1;
+  cursor: default;
+  padding-left: 15px;
+  color: $picker-text-dark-color;
+
+  &:focus {
+    box-shadow: none;
+  }
+}
