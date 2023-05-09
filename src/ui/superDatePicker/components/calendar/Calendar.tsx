@@ -1,20 +1,33 @@
 import { CalendarDays } from '../calendarDays';
 import { CalendarHeader } from '../calendarHeader';
 import { CalendarTime } from '../calendarTime';
+import { useEscapeEvent } from '../../hooks/useEscapeEvent';
+import { useStore } from '../../hooks/useStore';
+import { Action } from '../../store/actions';
+import { DateMode } from '../../store/state';
 import styles from './calendar.module.scss';
 
-interface ICalendar {
-  date?: Date,
-}
+function Calendar() {
 
-function Calendar({ date = new Date() }: ICalendar) {
+  const { dispatch } = useStore();
+
+  const handleCalendarEscape = () => {
+    dispatch({ type: Action.ClosePopover });
+    dispatch({
+      type: Action.ChangeDateMode,
+      payload: DateMode.None,
+    });
+  };
+
+  useEscapeEvent(handleCalendarEscape);
+
   return (
     <div className={styles.calendar}>
       <div className={styles.monthYear}>
-        <CalendarHeader date={date} />
+        <CalendarHeader />
       </div>
       <div className={styles.dates}>
-        <CalendarDays date={date} />
+        <CalendarDays />
       </div>
       <div className={styles.time}>
         <CalendarTime />
@@ -22,9 +35,5 @@ function Calendar({ date = new Date() }: ICalendar) {
     </div>
   );
 }
-
-Calendar.defaultProps = {
-  date: new Date(),
-};
 
 export { Calendar };

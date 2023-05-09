@@ -1,0 +1,22 @@
+import { TIME_LIST } from '../constants/calendar';
+import { dateToStringParser } from './dateToStringParser';
+
+export const getPreselectedTime = (date: Date) => {
+  const currentTime = dateToStringParser.getTimeAbsShort(date);
+  for (let i = 0; i <= TIME_LIST.length; i++) {
+    if (currentTime < TIME_LIST[i]) {
+      return i - 1;
+    }
+  }
+  return TIME_LIST.length - 1;
+};
+
+export const getSelectedTime = (date: Date) => {
+  const currentTime = dateToStringParser.getTimeAbsFull(date);
+  for (let i = 0; i <= TIME_LIST.length; i++) {
+    if (currentTime === `${TIME_LIST[i]}:00.000`) {
+      return i;
+    }
+  }
+  return -1;
+};

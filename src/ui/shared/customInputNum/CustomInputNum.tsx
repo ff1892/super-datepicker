@@ -1,13 +1,20 @@
+import { ChangeEvent } from 'react';
 import styles from './customInputNum.module.scss';
 
 interface ICustomInputNum {
   ariaText: string,
   defaultValue: number,
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+  name?: string,
 }
 
-function CustomInputNum({ ariaText, defaultValue }: ICustomInputNum): JSX.Element {
+function CustomInputNum({
+  ariaText, defaultValue, name, onChange,
+}: ICustomInputNum): JSX.Element {
   return (
     <input
+      name={name}
+      onChange={onChange}
       aria-label={ariaText}
       defaultValue={defaultValue}
       min={0}
@@ -16,5 +23,10 @@ function CustomInputNum({ ariaText, defaultValue }: ICustomInputNum): JSX.Elemen
     />
   );
 }
+
+CustomInputNum.defaultProps = {
+  onChange: () => {},
+  name: 'custom input number',
+};
 
 export { CustomInputNum };

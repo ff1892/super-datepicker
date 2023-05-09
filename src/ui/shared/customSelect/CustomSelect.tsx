@@ -1,3 +1,4 @@
+import { ChangeEvent } from 'react';
 import styles from './customSelect.module.scss';
 
 interface IOptions {
@@ -10,10 +11,12 @@ export interface ICustomSelect {
   ariaText: string,
   defaultValue?: string,
   options: IOptions[],
+  onChange?: (e: ChangeEvent) => void;
+  lowerCase?: boolean,
 }
 
 function CustomSelect({
-  name, ariaText, defaultValue, options,
+  name, ariaText, defaultValue, options, lowerCase, onChange,
 }: ICustomSelect): JSX.Element {
   return (
     <div className={styles.selectWrapper}>
@@ -23,6 +26,7 @@ function CustomSelect({
         id={name}
         aria-label={ariaText}
         defaultValue={defaultValue}
+        onChange={onChange}
       >
         {
         options.map(({ value, text }) => (
@@ -30,7 +34,7 @@ function CustomSelect({
             key={value}
             value={value}
           >
-            { text }
+            { lowerCase ? text.toLowerCase() : text }
           </option>
         ))
       }
@@ -41,6 +45,8 @@ function CustomSelect({
 
 CustomSelect.defaultProps = {
   defaultValue: undefined,
+  onChange: () => {},
+  lowerCase: true,
 };
 
 export { CustomSelect };

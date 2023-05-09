@@ -8,10 +8,14 @@
     width: 100%;
     padding: 10px 15px;
     cursor: pointer;
-    font-size: $medium-text-size;
+    font-size: $small-text-size;
+    line-height: $small-text-size;
     border: none;
     background-color: $picker-white;
     outline: none;
+    color: $picker-text-dark-color;
+    display: flex;
+    align-items: center;
 
     &:focus {
       @include bottom-line;
@@ -20,12 +24,10 @@
 }
 
 .alignRight {
-  display: flex;
   justify-content: flex-end;
 }
 
 .alignLeft {
-  display: flex;
   justify-content: flex-start;
 }
 
@@ -34,4 +36,10 @@
   background-color: $picker-accent-color-10;
   cursor: default;
   box-shadow: inset 0 -2px 0 0 $picker-accent-color;
+}
+
+.popoverInvalid {
+  cursor: default;
+  box-shadow: inset 0 -2px 0 0 $picker-red;
+
 }

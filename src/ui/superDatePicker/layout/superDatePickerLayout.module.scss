@@ -16,7 +16,8 @@
 }
 
 .quickModal {
-  width: 350px;
+  z-index: 10;
+  width: 400px;
   position: absolute;
   left: 105%;
   transform: translateY(-50%);

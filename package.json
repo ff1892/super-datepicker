@@ -18,6 +18,7 @@
   "author": "Grigory Poleshchuk",
   "license": "ISC",
   "devDependencies": {
+    "@elastic/datemath": "5.0.3",
     "@types/react": "18.2.0",
     "@types/react-dom": "18.2.1",
     "@typescript-eslint/eslint-plugin": "5.59.1",
@@ -36,6 +37,7 @@
     "style-loader": "3.3.2",
     "ts-loader": "9.4.2",
     "typescript": "5.0.4",
+    "usehooks-ts": "2.9.1",
     "webpack": "5.81.0",
     "webpack-cli": "5.0.2",
     "webpack-dev-server": "4.13.3",

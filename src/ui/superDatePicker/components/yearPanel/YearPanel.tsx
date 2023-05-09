@@ -1,12 +1,42 @@
+import { MouseEvent } from 'react';
 import { YEARS_IN_LIST } from '../../constants/calendar';
+import { useEscapeEvent } from '../../hooks/useEscapeEvent';
+import { useStore } from '../../hooks/useStore';
+import { Action } from '../../store/actions';
+import { CalendarMode } from '../../store/state';
 import { getYearsList } from '../../utils/getYearsList';
+import { useDate } from '../../hooks/useDate';
 import styles from './YearPanel.module.scss';
 
-interface IYearPanel {
-  date?: Date;
-}
+function YearPanel() {
 
-function YearPanel({ date = new Date() }: IYearPanel) {
+  const { dispatch } = useStore();
+  const date = useDate();
+  const currentYear = date.getFullYear().toString();
+
+  const handleYearEscape = () => {
+    dispatch({
+      type: Action.ChangeCalendarMode,
+      payload: CalendarMode.Calendar,
+    });
+  };
+
+  const handleYearClick = (e: MouseEvent) => {
+    const clickedYear = e.currentTarget?.textContent;
+    if (clickedYear && clickedYear !== currentYear) {
+      date.setFullYear(+clickedYear);
+      dispatch({
+        type: Action.ChangeTime,
+        payload: new Date(date.getTime()),
+      });
+    }
+    dispatch({
+      type: Action.ChangeCalendarMode,
+      payload: CalendarMode.Calendar,
+    });
+  };
+
+  useEscapeEvent(handleYearEscape);
 
   const thisYear = date.getFullYear();
   const yearsList = getYearsList(thisYear, YEARS_IN_LIST);
@@ -21,6 +51,8 @@ function YearPanel({ date = new Date() }: IYearPanel) {
                 ${styles.yearButton}
                 ${year === thisYear ? styles.yearSelected : ''}`}
               type='button'
+              key={year}
+              onClick={handleYearClick}
             >
               { year }
             </button>
@@ -30,9 +62,5 @@ function YearPanel({ date = new Date() }: IYearPanel) {
     </div>
   );
 }
-
-YearPanel.defaultProps = {
-  date: new Date(),
-};
 
 export { YearPanel };

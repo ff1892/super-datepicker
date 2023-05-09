@@ -4,8 +4,18 @@ export const TimeUnit = {
   Hours: 'hours',
   Days: 'days',
   Weeks: 'weeks',
-  Months: 'months',
+  Months: 'Months',
   Years: 'years',
+};
+
+export const TimeUnitShort = {
+  Seconds: 's',
+  Minutes: 'm',
+  Hours: 'h',
+  Days: 'd',
+  Weeks: 'w',
+  Months: 'M',
+  Years: 'y',
 };
 
 export const CommonlyUsedTime = [
@@ -18,3 +28,5 @@ export const CommonlyUsedTime = [
   'Month to date',
   'Year to date',
 ];
+
+export const fullDateRegex = /^(?:January|February|March|April|May|June|July|August|September|October|November|December) \d{1,2}, \d{4} @ \d{2}:\d{2}:\d{2}\.\d{3}$/;
