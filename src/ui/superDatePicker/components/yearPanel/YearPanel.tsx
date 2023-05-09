@@ -6,7 +6,7 @@ import { Action } from '../../store/actions';
 import { CalendarMode } from '../../store/state';
 import { getYearsList } from '../../utils/getYearsList';
 import { useDate } from '../../hooks/useDate';
-import styles from './YearPanel.module.scss';
+import styles from './yearPanel.module.scss';
 
 function YearPanel() {
 
