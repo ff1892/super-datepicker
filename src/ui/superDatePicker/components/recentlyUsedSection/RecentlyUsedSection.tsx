@@ -13,7 +13,7 @@ function RecentlyUsedSection({ dates }: IRecentlyUsed): JSX.Element {
       <ul className={styles.recentlyList}>
         {
           dates.map((date) => (
-            <li className={styles.recentlyItem}>
+            <li className={styles.recentlyItem} key={date}>
               <button type='button' className={styles.recentlyButton}>
                 {date}
               </button>

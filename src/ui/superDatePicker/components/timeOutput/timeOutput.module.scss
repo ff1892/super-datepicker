@@ -1,21 +1,46 @@
 .output {
   display: flex;
+  position: relative;
+  padding-bottom: 20px;
 }
 
-.outputLabel {
+.outputButton {
   padding: 10px 15px;
   background-color: $picker-text-dark-color-10;
-  font-size: $regular-text-size;
+  font-size: $small-text-size;
+  border: none;
+  cursor: pointer;
+  color: $picker-text-dark-color;
+
+  &:hover {
+    background-color: $picker-text-dark-color-20;
+  }
+
+  &:disabled {
+    background-color: $picker-text-dark-color-10;
+    cursor: default;
+  }
 }
 
 .outputInput {
   @include input;
   flex-grow: 1;
-  cursor: default;
-  padding-left: 15px;
   color: $picker-text-dark-color;
+  padding-left: 15px;
 
   &:focus {
     box-shadow: none;
   }
+
+  &:read-only {
+    cursor: default;
+  }
+}
+
+.error {
+  position: absolute;
+  bottom: 17px;
+  left: 17px;
+  font-size: $small-text-size;
+  color: $picker-red;
 }

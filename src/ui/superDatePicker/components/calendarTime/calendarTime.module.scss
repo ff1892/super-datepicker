@@ -37,10 +37,25 @@
   }
 
   &:focus {
-    background-color: $picker-accent-color-20;
+    background-color: $picker-accent-color-30;
   }
 
   &:active {
     text-decoration: underline;
+  }
+}
+
+.preselected {
+  border: 1px solid $picker-accent-color-30;
+}
+
+.selected {
+  color: $picker-white;
+  background-color: $picker-accent-color;
+
+  &:focus {
+    background-color: $picker-accent-color-10;
+    color: $picker-text-grey-color;
+    @include outline-standard;
   }
 }
