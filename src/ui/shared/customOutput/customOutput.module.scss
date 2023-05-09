@@ -1,0 +1,11 @@
+.customInput {
+  width: 100%;
+  padding: 10px 20px;
+  pointer-events: none;
+  border-radius: 4px;
+  border: 2px solid $picker-accent-color-20;
+}
+
+.invalid {
+  border: 1px solid $picker-red;
+}

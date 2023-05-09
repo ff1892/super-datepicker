@@ -3,7 +3,13 @@ import { SuperDatePicker } from '../ui/superDatePicker';
 import '../style/global.scss';
 
 function App() {
-  return <SuperDatePicker />;
+
+  return (
+    <>
+      <h1>Super Date Picker</h1>
+      <SuperDatePicker />
+    </>
+  );
 }
 
 const app = (

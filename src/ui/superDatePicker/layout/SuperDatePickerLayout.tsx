@@ -6,10 +6,14 @@ import { QuickSelectModal } from '../components/quickSelectModal';
 import { PopoverSection } from '../components/popoverSection';
 import { useStore } from '../hooks/useStore';
 import styles from './superDatePickerLayout.module.scss';
+import { dateToStringParser } from '../utils/dateToStringParser';
+import { CustomOutput } from '../../shared/customOutput';
+import { PICKER_NAME } from '../constants/common';
 
 function SuperDatePickerLayout() {
 
   const { store } = useStore();
+  const { datesValid } = store;
 
   const [isPopoverShown, togglePopoverShown] = useState(false);
 
@@ -19,7 +23,6 @@ function SuperDatePickerLayout() {
 
   return (
     <>
-      <h1 className={styles.title}>Super Date Picker</h1>
       <div className={styles.pickerWrapper}>
         <div className={styles.quickButton}>
           <QuickSelectButton />
@@ -35,6 +38,18 @@ function SuperDatePickerLayout() {
             : <PrettyFormatButton onClick={handlePrettyClick} />}
         </div>
         <RefreshButton />
+      </div>
+      <div className={styles.outputWrapper}>
+        <CustomOutput
+          name={PICKER_NAME.Start}
+          value={dateToStringParser.getDateAbs(store.date.start)}
+          isValid={datesValid}
+        />
+        <CustomOutput
+          name={PICKER_NAME.End}
+          value={dateToStringParser.getDateAbs(store.date.end)}
+          isValid={datesValid}
+        />
       </div>
 
     </>

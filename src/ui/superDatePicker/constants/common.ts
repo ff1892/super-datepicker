@@ -30,3 +30,8 @@ export const CommonlyUsedTime = [
 ];
 
 export const fullDateRegex = /^(?:January|February|March|April|May|June|July|August|September|October|November|December) \d{1,2}, \d{4} @ \d{2}:\d{2}:\d{2}\.\d{3}$/;
+
+export const PICKER_NAME = {
+  Start: 'pickerStartDate',
+  End: 'pickerEndDate',
+};
