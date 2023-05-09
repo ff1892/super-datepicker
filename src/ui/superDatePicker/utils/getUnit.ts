@@ -1,9 +1,13 @@
 import { TimeUnitShort } from '../constants/common';
 
-export const getUnit = (str: string) => {
+// Возвращает полный unitTime
+// 'm' --> 'Minutes'
+// 'y' --> 'Years'
+
+export const getUnit = (shortUnit: string) => {
   let unit = '';
   Object.entries(TimeUnitShort).forEach(([key, value]) => {
-    if (value === str) {
+    if (value === shortUnit) {
       unit = key;
     }
   });

@@ -3,6 +3,8 @@ import { StateContext, DispatchContext } from './context';
 import { reducer } from './reducers';
 import { initialState } from './state';
 
+// Обертка компонента для передачи состояния
+
 function StoreProvider({ children }: PropsWithChildren<{}>): JSX.Element {
   const [store, dispatch] = useReducer(reducer, initialState);
 

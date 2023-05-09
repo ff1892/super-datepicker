@@ -1,5 +1,7 @@
 import dateMath from '@elastic/datemath';
 
+// Возвращает дату начала и конца выбранного периода
+// используется в Commonly Used Section
 export const getDateRange = (query: string) => {
   const now = new Date();
   let start = new Date(now.getFullYear(), now.getMonth(), now.getDate());
